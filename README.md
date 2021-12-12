@@ -2,7 +2,7 @@
 
 ## Overview of the MechaCar Statistical Analysis
 
-AutosRUs’ newest prototype, the MechaCar, is suffering from production troubles that are blocking the manufacturing team’s progress. AutosRUs’ upper management has called on Jeremy and the data analytics team to review the production data for insights that may help the manufacturing team.
+AutosRUs’ newest prototype, the MechaCar, is suffering from production troubles that are blocking the manufacturing team’s progress. AutosRUs’ upper management has called on the data analytics team to review the production data for insights that may help the manufacturing team.
 
 ## Resources
 - Data Source: MechaCar_mpg.csv, Suspension_Coil.csv
@@ -20,24 +20,26 @@ From the linear regression model we can accurately answer the following question
 
 1) Which variables/coefficients provided a non-random amount of variance to the mpg values in the dataset?
 
-The vehicle length, and vehicle ground clearance are statistically likely to provide non-random amounts of variance to the model. Specifically, the vehicle length and ground clearance have a significant impact on miles per gallon on the MechaCar prototype, as indicated by their p-values . On the other hand, the other variables have p-values that indicate a random amount of variance with the dataset.
+- The vehicle length, and vehicle ground clearance are statistically likely to provide non-random amounts of variance to the model. Specifically, the vehicle length and ground clearance have a significant impact on miles per gallon on the MechaCar prototype, as indicated by their p-values . On the other hand, the other variables have p-values that indicate a random amount of variance with the dataset.
 
 2) Is the slope of the linear model considered to be zero? Why or why not?
 
-The p-value for this model, 5.35e-11, is much smaller than the assumed significance level of 0.05%. This indicates there is sufficient evidence to reject the null hypothesis, and that the slop of this linear model would not be zero. Although, it should be noted this answer remains the same if we were using only the vehicle length and ground clearance variables to create this linear regression model, but the same can not be said if it was modelled using only the other variables.
+- The p-value for this model, 5.35e-11, is much smaller than the assumed significance level of 0.05%. This indicates there is sufficient evidence to reject the null hypothesis, and that the slop of this linear model would not be zero. Although, it should be noted this answer remains the same if we were using only the vehicle length and ground clearance variables to create this linear regression model, but the same can not be said if it was modelled using only the other variables.
 
 3) Does this linear model predict mpg of MechaCar prototypes effectively? Why or why not?
 
-This linear model has an r-squared value of 0.7149. This means that approximately 71% of all mpg predictions will be determined by this model. With an r-squared value this high, relatively speaking, this linear model does predict mpg of MechaCar prototypes effectively.
+- This linear model has an r-squared value of 0.7149. This means that approximately 71% of all mpg predictions will be determined by this model. With an r-squared value this high, relatively speaking, this linear model does predict mpg of MechaCar prototypes effectively.
 
 ## Summary Statistics on Suspension Coils
 
 The design specifications for the MechaCar suspension coils dictate that the variance of the suspension coils must not exceed 100 pounds per square inch. We can use the statistics below to determine if the current manufacturing data meet this design specification.
 
 Overall summary:
+
 ![Overall_Summary](resources/total_summary.png)
 
 Lot specific summary:
+
 ![Lot_Summary](resources/lot_summary.png)
 
 When looking at the total from all three manufacturing lots, the variance of the coils is approximately 62.29 PSI, which is well within the 100 PSI variance requirement. Similarly, and even more consistently, Lot 1 and Lot 2 are well within the 100 PSI variance requirement with variances of approximately 0.98 and 7.47 respectively. However, when looking at Lot 3 individually, we can see that Lot 3 shows a variance of approximately 170.29 which fails to meet the design specification.  We can also conclude that it is Lot 3 that is disproportionately impacting the overall variance level when looking at all three lots combined.
@@ -47,6 +49,7 @@ When looking at the total from all three manufacturing lots, the variance of the
 Performing a t-test on the suspension coil data, to determine whether there is a statistical difference between the mean of this provided sample dataset and a hypothesized potential population dataset, using a presumed population mean of 1500, we find the following results:
 
 Across all manufacturing lots:
+
 ![All_Lot_TTest](resources/all_lot_ttest.png)
 
 With this t-test we can see that the true mean of the sample is 1498.78, which is confirmed in the summary statistics above. The t-test also shows a p-value of over 0.06, which is higher than the assumed significance level of 0.05. Suffice it to say, there is not enough evidence to reject the null hypothesis. Therefore, the mean of all three manufacturing lots is statistically similar to the presumed population mean of 1500. 
@@ -54,12 +57,15 @@ With this t-test we can see that the true mean of the sample is 1498.78, which i
 However, if we look at t-test results for the three lots individually we find the following results:
 
 For Lot 1:
+
 ![Lot_1_TTest](resources/lot_1_ttest.png)
 
 For Lot 2:
+
 ![Lot_2_TTest](resources/lot_2_ttest.png)
 
 For Lot 3:
+
 ![Lot_3_TTest](resources/lot_3_ttest.png)
 
 The Lot 1 sample actually shows a true sample mean of 1500, meaning it also has a p-value equal to 1. Clearly we cannot reject the null hypothesis that there is no statistical difference between the observed sample mean and the presumed population mean for Lot 1.
